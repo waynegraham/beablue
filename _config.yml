@@ -1,0 +1,8 @@
+# Dependencies
+markdown:     kramdown
+highlighter:  rouge
+
+# Permalinks
+permalink:    pretty
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Be a Blue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Abel|Open+Sans:400,600'>
+  <link rel="stylesheet" href='styles.css'>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 panel">
+
+        <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/fL1qEV8r7es?rel=0" frameborder="0" allowfullscreen></iframe></div>
+
+        <h1 class="margin-base-vertical">Coming soon...</h1>
+
+        <p>If you'd like to be notified when this site launches, fill out the form below.</p>
+
+        <div id="notices">
+          <div class="alert alert-success alert-dismissable" id="success" style="display: none;">Success! Please check your inbox for a confirmation request.</div>
+          <div class="alert alert-danger alert-dismissable" id="error" style="display: none;">Sorry, MailChimp couldn't validate your email. Try again?</div>
+        </div>
+
+        <form action="/signup" method="post" class="margin-base-vertical">
+            <p class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="email" id="email" name="email" class="form-control input-lg" placeholder="yosemite-sam@beablue.org" />
+            </p>
+            <p class="help-block text-center"><small>We won't send you spam. Unsubscribe at any time.</small></p>
+            <p class="text-center">
+                <button type="submit" class="btn btn-success btn-lg">Keep me posted</button>
+            </p>
+          </form>
+
+          <ul class="social-list">
+            <li><div class="g-plusone" data-size="medium"></div></li>
+            <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= request.url %>" data-text="I just signed up for Be a Blue">Tweet</a></li>
+            <li><div class="fb-share-button" data-href="<%= request.url %>" data-type="button_count"></div></li>
+          </ul>
+
+        <div class="margin-base-vertical">
+          <p class="text-muted"><a href="http://www.flickr.com/photos/jculverhouse/5735328861">Background picture by jculverhouse @flickr</a>.<br/>
+            Used under <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="js/main.min.js"></script>
+
+  <script>
+$(document).ready(function() {
+
+    // video
+    //$('#video').fitVids();
+
+    // form
+      $("form").submit(function(e) {
+        $("#notices div").hide();
+        e.preventDefault();
+
+        if ($("form input#email").val() === "") {
+          $("#notices #error").show();
+        } else {
+          $.post("/signup", $(this).serialize(), function() {
+            $("#notices #success").show();
+            $("form input#email").val("");
+          })
+          .error(function() {
+            $("#notices #error").show();
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Twitter -->
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  <!-- Google Plus share button -->
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+  </script>
+
+  <!-- Facebook share button -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=243939522354678";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  </body>
+</html>
