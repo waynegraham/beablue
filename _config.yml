@@ -10,7 +10,10 @@ highlighter:  rouge
 # Permalinks
 permalink:    pretty
 
-exclude: ["Gemfile", "Gemfile.lock", "Gruntfile.js", "_nodemodules", "bower_components", "package.json", "LICENSE", "bower.json"]
+sass:
+  sass_dir: _sass
+  style:    compressed
+exclude: ["Gemfile", "Gemfile.lock", "Gruntfile.js", "_nodemodules", "bower_components", "package.json", "_sass", "LICENSE", "bower.json"]
 
 gems:
   - jekyll-sitemap
