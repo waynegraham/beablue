@@ -12,7 +12,9 @@ permalink:    pretty
 
 sass:
   sass_dir: _sass
-  style:    compressed
+  css_dir:  assets/css
+  style:    :compressed
+
 exclude: ["Gemfile", "Procfile", "Gemfile.lock", "Gruntfile.js", "nodemodules", "bower_components", "package.json", "_sass", "LICENSE", "bower.json"]
 
 gems:

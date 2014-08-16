@@ -12,6 +12,7 @@ gem 'github-pages'
 gem 'jekyll'   # static site generator
 gem 'rouge'    # colorize code
 gem 'kramdown' # markdown processor
+gem 'rb-gsl', '~> 1.16.0.2'
 
 group :development do
   gem "foreman"
