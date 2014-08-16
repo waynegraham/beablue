@@ -2,6 +2,7 @@
 title: Be a Blue
 description: Buena Vista City Public Schools Be a Blue
 baseurl: "http://waynegraham.github.io/beablue"
+url: "http://beablue.org"
 
 # Dependencies
 markdown:     kramdown
@@ -13,9 +14,11 @@ permalink:    pretty
 sass:
   sass_dir: _sass
   css_dir:  assets/css
-  style:    :compressed
+  style:    expanded
+  deploy_style: compressed
 
-exclude: ["Gemfile", "Procfile", "Gemfile.lock", "Gruntfile.js", "nodemodules", "bower_components", "package.json", "_sass", "LICENSE", "bower.json"]
+exclude: ["Gemfile", "Procfile", "Gemfile.lock", "Gruntfile.js", "node_modules", "bower_components", "package.json", "_sass", "LICENSE", "bower.json"]
 
 gems:
   - jekyll-sitemap
+  - jekyll-sass

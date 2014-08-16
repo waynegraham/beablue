@@ -1,11 +1,14 @@
 <footer class="site-footer">
-  <div id="f">
-    <div class="container">
-      <div class="row centered">
-        copyright
-      </div><!-- row -->
-    </div><!-- container -->
-  </div><!-- Footer -->
+
+  <div id="copyright">
+    &copy; {{year}}, Buena Vista City Public Schools.
+  </div>
+
+  <div id="social">
+    <a href="https://www.facebook.com/pages/Buena-Vista-City-Public-Schools/145021112207748" rel="tooltip" title="Facebook" class="facebook">Facebook</a>
+    <a href="{{ "feed.xml" | prepend: site.baseurl }}" rel="tooltip" title="RSS" class="rss">RSS</a>
+    <a href="#" rel="tooltip" title="YouTube" class="youtube">YouTube</a>
+  </div>
 </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
