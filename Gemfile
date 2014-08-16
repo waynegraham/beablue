@@ -9,6 +9,9 @@ ruby "2.1.2"
 gem "dotenv"
 
 gem 'github-pages'
+gem 'jekyll'   # static site generator
+gem 'rouge'    # colorize code
+gem 'kramdown' # markdown processor
 
 group :development do
   gem "foreman"
