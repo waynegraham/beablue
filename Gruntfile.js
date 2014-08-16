@@ -13,9 +13,9 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   var paths = {
-    js:     './assets/js/vendor/',
-    images: './images',
-    sass:   './sass/**/*',
+    js:     './assets/js/',
+    images: './assets/images',
+    sass:   './_sass/**/*',
     css:    './css'
   };
 
@@ -99,8 +99,8 @@ module.exports = function(grunt) {
 
     modernizr: {
       dist: {
-        "devFile": "assets/js/vendor/modernizr/modernizr.js",
-        "outputFile": "js/modernizr-custom.js",
+        "devFile": "bower_components/modernizr/modernizr.js",
+        "outputFile": "assets/js/modernizr-custom.js",
         "extra" : {
           "shiv": true,
           "printshiv": false,
@@ -129,6 +129,6 @@ module.exports = function(grunt) {
 
 
   // register task
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['jshint']);
 
 };

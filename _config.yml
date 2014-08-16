@@ -13,7 +13,7 @@ permalink:    pretty
 sass:
   sass_dir: _sass
   style:    compressed
-exclude: ["Gemfile", "Gemfile.lock", "Gruntfile.js", "_nodemodules", "bower_components", "package.json", "_sass", "LICENSE", "bower.json"]
+exclude: ["Gemfile", "Procfile", "Gemfile.lock", "Gruntfile.js", "nodemodules", "bower_components", "package.json", "_sass", "LICENSE", "bower.json"]
 
 gems:
   - jekyll-sitemap
