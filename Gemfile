@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.1.2"
+ruby "2.2.3"
 
 #gem 'mailchimp-api'
 #gem "sinatra", "~> 1.4.4"

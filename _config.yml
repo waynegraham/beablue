@@ -13,7 +13,6 @@ permalink:    pretty
 
 sass:
   sass_dir: _sass
-  css_dir:  assets/css
   style:    expanded
   deploy_style: compressed
 
